@@ -1,14 +1,9 @@
 import Link from "next/link";
 
-const index = () => (
+const Home = props => (
   <div>
-    HI
-    <p>
-      <Link href="/sell">
-        <a> Sell!</a>
-      </Link>
-    </p>
+    <p>Hey!</p>
   </div>
 );
 
-export default index;
+export default Home;
