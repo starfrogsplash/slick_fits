@@ -16,4 +16,6 @@ function createClient({ headers }) {
   });
 }
 
+console.log(process.env.NODE_ENV)
+
 export default withApollo(createClient);
