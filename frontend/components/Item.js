@@ -9,7 +9,7 @@ import DeleteItem from './DeleteItem';
 
 export default class Item extends Component {
   static propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
   };
 
   render() {
@@ -17,11 +17,12 @@ export default class Item extends Component {
     return (
       <ItemStyles>
         {item.image && <img src={item.image} alt={item.title} />}
+
         <Title>
           <Link
             href={{
-              pathname: "/item",
-              query: { id: item.id }
+              pathname: '/item',
+              query: { id: item.id },
             }}
           >
             <a>{item.title}</a>
@@ -33,13 +34,12 @@ export default class Item extends Component {
         <div className="buttonList">
           <Link
             href={{
-              pathname: "update",
-              query: { id: item.id }
+              pathname: 'update',
+              query: { id: item.id },
             }}
           >
             <a>Edit ✏️</a>
           </Link>
-          <button>Add To Cart</button>
           <DeleteItem id={item.id}>Delete This Item</DeleteItem>
         </div>
       </ItemStyles>

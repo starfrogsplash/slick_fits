@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Head from "next/head";
 
 const SingleItemStyles = styled.div`
- max-width: 1200px;
+  max-width: 1200px;
   margin: 2rem auto;
   box-shadow: ${props => props.theme.bs};
   display: grid;
@@ -22,9 +22,7 @@ const SingleItemStyles = styled.div`
     margin: 3rem;
     font-size: 2rem;
   }
-
-`
-
+`;
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -46,7 +44,7 @@ export default class SingleItem extends Component {
           if (loading) return <p>Loading...</p>;
           if (!data.item) return <p>No Item Found for {this.props.id}</p>;
           const item = data.item;
-          console.log(item)
+          console.log(item);
           return (
             <SingleItemStyles>
               <Head>
