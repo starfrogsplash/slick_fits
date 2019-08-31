@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
+import jwt from 'jsonwebtoken'
 
 dotenv.config({ path: 'variables.env' });
 
@@ -12,6 +13,18 @@ const server = createServer();
 // TODO Use express middlware to handle cookies (JWT)
 server.express.use(cookieParser())
 // TODO Use express middlware to populate current user
+
+server.express.use((req, res, next)=> {
+
+  const {cookies:{token}} =  req
+
+  if (token){
+   const {userId} = jwt.verify(token, process.env.APP_SECRET)
+   req.userId = userId;
+  } 
+  next()
+})
+
 
 server.start(
   {
