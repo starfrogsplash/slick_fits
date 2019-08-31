@@ -6,7 +6,7 @@ const Item = styled.div`
   box-shadow: ${props => props.theme.bs};
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   img {
     width: 100%;
     height: 400px;
