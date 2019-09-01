@@ -17,6 +17,10 @@ const PaginationStyles = styled.div`
     &:last-child {
       border-right: 0;
     }
+
+    @media (max-width: 1300px) {
+    padding: 5px 10px;
+  }
   }
   a[aria-disabled='true'] {
     color: grey;

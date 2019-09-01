@@ -38,6 +38,9 @@ injectGlobal`
     font-size: 1.5rem;
     line-height: 2;
     font-family: 'radnika_next';
+    /* @media (max-width: 400px) {
+      line-height: 1;
+    } */
   }
   a {
     text-decoration: none;
