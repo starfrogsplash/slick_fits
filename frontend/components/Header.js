@@ -1,6 +1,20 @@
-import Nav from "./Nav";
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link';
+import styled from 'styled-components';
+import NProgress from 'nprogress';
+import Router from 'next/router';
+import Nav from './Nav';
+import Cart from './Cart';
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -41,11 +55,11 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => (
-   <StyledHeader>
+  <StyledHeader>
     <div className="bar">
       <Logo>
         <Link href="/">
-          <a>Slick Fits</a>
+          <a>Sick Fits</a>
         </Link>
       </Logo>
       <Nav />
@@ -53,8 +67,8 @@ const Header = () => (
     <div className="sub-bar">
       <p>Search</p>
     </div>
-    <div>Cart</div>
-</StyledHeader>
+    <Cart />
+  </StyledHeader>
 );
 
 export default Header;
