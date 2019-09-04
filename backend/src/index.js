@@ -34,7 +34,6 @@ server.express.use(async (req, res, next) => {
     { where: { id: req.userId } },
     '{ id, permissions, email, name }'
   );
-  console.log("user===", user)
   req.user = user;
   next();
 });

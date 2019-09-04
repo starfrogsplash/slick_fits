@@ -47,7 +47,7 @@ class AutoComplete extends React.Component {
   render() {
     return (
       <SearchStyles>
-        <Downshift onChange={routeToItem} itemToString={item => (item === null ? '' : item.title)}>
+        <Downshift id="lang-switcher" onChange={routeToItem} itemToString={item => (item === null ? '' : item.title)}>
           {({ getInputProps, getItemProps, isOpen, inputValue, highlightedIndex }) => (
             <div>
               <ApolloConsumer>
