@@ -35,14 +35,14 @@ const SINGLE_ITEM_QUERY = gql`
   }
 `;
 
-export default class SingleItem extends Component {
-  render() {
+export  const SingleItem = (props) => {
+  console.log("props===", props)
     return (
-      <Query query={SINGLE_ITEM_QUERY} variables={{ id: this.props.id }}>
+      <Query query={SINGLE_ITEM_QUERY} variables={{ id: props.id }}>
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
-          if (!data.item) return <p>No Item Found for {this.props.id}</p>;
+          if (!data.item) return <p>No Item Found for {props.id}</p>;
           const item = data.item;
           console.log(item);
           return (
@@ -61,4 +61,5 @@ export default class SingleItem extends Component {
       </Query>
     );
   }
-}
+
+  export default SingleItem
